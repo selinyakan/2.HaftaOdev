@@ -1,0 +1,95 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Alışveriş Listesi</title>
+   <style>
+    #sayfa{
+      width: 500px;
+      margin:auto;
+      background:pink;
+      padding:100px;
+    }
+    label{
+      display:block;
+      margin-top:5px;
+    }
+    input{
+      width: 200px;
+      height: 25px;
+      font-size:1.2em;
+    }
+    button{
+      border:none;
+      display:block;
+      margin-top:5px;
+      width: 100px;
+      height: 50px;
+      text-align: left;
+      font-size:1.2em;
+    }
+    table{
+      background:#AD1457;
+      margin:5px;
+      width: 100%;
+      color:#fff;
+    }
+    td,th{
+      border:1px solid #F06292;
+      border-spacing: 0px;
+      margin: 0px;
+    }
+  </style>
+    </head>
+    <body>
+        <div id="sayfa">
+          <h1><font face="Candara" size="7px" color=" #424242">Alışveriş Listesi</font></h1>
+            <label>Ürün adı:</label> <input type="text" id="ad">
+           
+            <label>Adet:</label> <input type="text" id="adet">
+            <button id="ekle">Listeye Ekle</button>
+            <table id="liste">
+                <tr>
+                    <td>Ürün</td>
+                    <td>Adet</td>
+                    
+                </tr>
+            </table>
+        </div>
+
+        <script>
+            const ad=document.querySelector("#ad");
+            const adet=document.querySelector("#adet");
+            const ekle=document.querySelector("#ekle");
+            const liste=document.querySelector("#liste");
+
+            ekle.onclick=function () {
+                
+                let tAd=document.createElement("td");
+                let tAdet=document.createElement("td");
+
+                tAd.textContent=ad.value;
+                tAdet.textContent=adet.value;
+                
+
+                let tr=document.createElement("tr");
+
+                tr.appendChild(tAd);
+                tr.appendChild(tAdet);
+
+                liste.appendChild(tr);
+
+                 ad.value="";
+                 adet.value="";
+      
+ 
+      
+                ad.focus();
+
+            }
+          
+
+        </script>
+ 
+    </body>
+</html>

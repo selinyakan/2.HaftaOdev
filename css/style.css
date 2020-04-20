@@ -1,0 +1,42 @@
+
+body{
+margin: 0;
+}
+
+tr {
+    list-style-type: none;
+    margin: 0;
+
+    padding: 0;
+
+    width: 25%
+
+    background-color: #E0E0E0;
+
+    position: fixed;
+
+    height: 100%
+
+    overflow: auto;
+}
+
+td a {
+    display: block;
+
+    color: #000000;
+
+    padding: 16px 15px;
+
+    text-decoration: none;
+}
+
+td a.active{
+    background-color: #212121;
+
+    color: white;
+}
+td a:hover:not(.active){
+    background-color:#EC407A;
+
+    color: white;
+}

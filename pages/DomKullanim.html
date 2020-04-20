@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8>
+<link rel="stylesheet" type="text/css" href=odev.css">
+<title>Dom Kullanımı</title>
+
+</head>
+<body>
+<header>
+
+<div style="margin-right:25%;padding:1px 16px; height:1000px;">
+
+
+<h1><font color='#C2185B' face="Consolas">JavaScript DOM Kullanımı</font></h1>
+<p><b><font face="Consolas">HTML DOM ile, javaScript kullanarak bir HTML belgesinin tüm elementlerine ulaşıp, değiştirebilirsiniz.  DOM; HTML, SVG, XML gibi yapısal diller için bir arayüz görevi görmektedir. Dom ile bir ağaç gibi belgeye ulaşıp, belgenin yapısını ve stilini değiştirmek mümkündür. </font></b></p>
+<h2><font color='#C2185B' face="Consolas">HTML DOM(Document Object Model)</font></h2>
+<p><b><font face="Consolas">Tarayıcı bir Web sayfasını yüklendiğinde DOM nesnesini de oluşturur. Yüklenen DOM, belge için bir dizi düğüm ve nesne sunmaktadır. Düğümler ile ayrıca olaylar ve tetikleyiciler eklenebilir. Özetle programlama dilini WEB sayfasına bağlamak için kullanılır..</font></b></p>
+<p><b><font face="Consolas"><i>DOM modeli nesneleri aşağıdaki gibi ağaç yapısında oluşturmaktadır.</i>
+</font></b></p>
+<p><b><font face="Consolas">JavaScript, Nesne Modelini kullanarak  HTML belgesini düzenlemek için gerekli tüm yetkilere sahiptir. Aşağıdaki gibi belge üzerinde tüm işlemleri gerçekleştirebiliriz.</font></b></p>
+<ul>
+<li><font face="Consolas">JavaScript sayfadaki tüm HTML öğrelerini değiştirebilir.</font></li>
+<li><font face="Consolas">JavaScript sayfadaki tüm HTML niteliklerini değiştirebilir.</font></li>
+<li><font face="Consolas">JavaScript sayfadaki tüm CSS stillerini değiştirebilir. </font></li>
+<li><font face="Consolas">JavaScript mevcut HTML belgesindeki nitelikleri kaldırabilir. </font></li>
+<li><font face="Consolas">JavaScript yeni HTML öğeleri ve nitelikleri ekleyebilir.</font></li>
+<li><font face="Consolas">JavaScript sayfadaki tüm HTML olaylarına tepki gösterebilir. </font></li>
+<li><font face="Consolas"> JavaScript yeni HTML olayları oluşturabilir.</font></li>
+<p><font face="Consolas"> Bu yazıda şunları öğreneceksiniz.</font></p>
+<li><font face="Consolas">HTML etiketlerinin içeriğini değiştirmeyi </font></li>
+<li><font face="Consolas">HTML etiketlerinin stilini değiştirmeyi</font></li>
+<li><font face="Consolas">DOM olaylarına nasıl tepki verileceğini</font><</li><br>
+<li><font face="Consolas">HTML etiket oluşturmayı ve silmeyi</font></li>
+</ul>
+<img src='images/ss9.png' alt='Örnek' height='250'>
+
+<h2><font color='#F50057' size='6' face="Consolas">HTML DOM Nedir?</font></h2>
+<p><font face="Consolas">Yukarıda belirtildiği gibi HTML DOM standart bir nesne ve programlama ara yüzüdür.<b>Nesne olarak HTML etiketi şunlara sahiptir.</b></font></p>
+
+<ul>
+<li><b><font face="Consolas">HTML etiketleri birer nesnedir.</font></b></li>
+<li><b><font face="Consolas">HTML etiketlerinin özellikleri</font></b></li>
+<li><b><font face="Consolas">HTML etiketlerine erişim metodları</font></b></li>
+<li><b><font face="Consolas">Tüm HTML etiketlerinin olayları </font></b></li>
+</ul>
+<p><b><font face="Consolas">HTML DOM metodları ile elementler üzerinde işlem yapabilirsiniz.</font></b></p>
+<p><b><font face="Consolas">HTML DOM özellikleri ile elementlerin değerlerini okuyabilir ve değiştirebilirsiniz.</font></b></p><br><br>
+<h2><font color='#F50057' size='6' face="Consolas">DOM Programlama Arayüzü</font></h2>
+<ul>
+<li><font face="Consolas">JavaScript ile Tüm HTML DOM ağacına ulaşabilirsiniz.</font></li>
+<li><font face="Consolas">DOM içinde tüm HTML etiketleri birer nesne (<b>object</b>) olarak oluşturulmuştur.</font></li>
+<li><font face="Consolas">Programlama arayüzü her etiket için metot(<b>method</b>) ve özellikler(<b>property</b>) sunar.</font></li>
+<li><font face="Consolas">Özellik(<b>Property</b>) etiket değeri üzerinde okuma ve değiştirme yapma imkanı sunar.(İçeriği değiştirme gibi)</font></li>
+<li><font face="Consolas">Methot (<b>Method</b>) etiket üzerinde eylemler gerçekleştirme imkanı sunar.(Yeni etiketler ekleme gibi)</font></li>
+</ul>
+<h2><font color='#F50057' size='6' face="Consolas">getElementById Metodu</font></h2>
+<p><b><font face="Consolas">Bir HTML etiketine erişmek için kullanılan en sık yöntemlerden biridir. Etiketin id niteliğini kullanır.</font></b></p>
+<h2><font color='#F50057' size='6' face="Consolas">innerHTML Özelliği</font></h2>
+<p><b><font face="Consolas">Bir HTML etiketinin içeriğini öğrenmenin en kolay yoludur.  innerHTML ile etiketin içeriğini almak yada değiştirmek mümkündür.</font></b></p>
+<h2><font color='#F50057' size='6' face="Consolas">HTML DOM document Nesnesi</font></h2>
+<p><b><font face="Consolas">document nesnesi web sayfasını temsil eder.
+
+Sayfa içindeki her hangi bir elemente ulaşmak için document nesnesi ile başlamak zorundasınız.  HTML etiketleri üzerinde düzenleme yapmak için kullanılan bazı document metotları aşağıda gösterilmiştir.</font></b></p><br><br>
+
+<h2><font color='#F50057' size='6' face="Consolas">HTML Etiketlerini Seçme</font></h2>
+<ul>
+<li><font face="Consolas">document.getElementById(id): id niteliği ile eşleşen ilk kaydı getirir.</font></li>
+<li><font face="Consolas">document.getElementsByName(name): name niteliği ile eşleşen tüm kayıtları dizi olarak  getirir.</font></li>
+<li><font face="Consolas">document.getElementsByTagName(etiketadı):etiket adı ile eşleşen tüm kayıtları dizi olarak getirir.</font></li>
+<li><font face="Consolas">document.getElementsByClassName(classAdı):class niteliği ile eşleşen tüm kayıtları dizi olarak getirir.</font></li>
+<li><font face="Consolas">document.querySelector(seçici): seçici ile eşleşen ilk kaydı getirir.</font></li>
+<li><font face="Consolas">document.querySelectorAll(seçici): seçici ile eşleşen tüm kayıtları dizi olarak getir.</font></li>
+</ul><br><br>
+<p><b><font face="Consolas">Aşağıdaki  document özellikleri ile de HTML nesnelerine liste olarak erişebilirsiniz. HTML belgesindeki nesneleri dizi listesi olarak çeker.</font></b></p>
+<p><b><i><font face="Consolas">Not: body, head, documentElement, title tek bir nesneyi döndürür. Diğerleri nesnelerden oluşan bir dizi döndürür.</font></i></b></p><br><br>
+<ul>
+<li><font face="Consolas">document.anchors  ⇨ Sayfadaki tüm bağlantıları erişmek için kullanılır.</font></li>
+<li><font face="Consolas">document.body  ⇨Body nesnesine ulaşmak için kullanılır</font></li>
+<li><font face="Consolas">document.documentElement ⇨HTML kökünden itibaren tüm dökümana ulaşmak için kullanılır.</font></li>
+<li><font face="Consolas">document.embeds ⇨ eklentilere ulaşmak için kullanılır.</font></li>
+<li><font face="Consolas">document.forms ⇨ Sayfadaki formlara ulaşmak için kullanılır.</font></li>
+<li><font face="Consolas">document.head ⇨ head etiketine ulaşmak için kullanılır.</font></li>
+<li><font face="Consolas">document.images ⇨Sayfadaki resimlere ulaşmak için</font></li>
+<li><font face="Consolas">document.links ⇨ Sayfadaki linklere ulaşmak için kullanılır.(a href olan nesneler)</font></li>
+<li><font face="Consolas">document.scripts ⇨ Sayfada yüklenen Script dosyalarına ulaşmak için kullanılır.</font></li>
+<li><font face="Consolas">document.title ⇨ Sayfa başlığına ulaşmak için kullanılır.</font></li>
+</ul>
+
+<p><font face="Consolas"><b>Örnek:</b> document.getElementById kullanımı</font></p>
+<img src='images/ss10.png' alt='Örnek2' height='200'>
+<p><font face="Consolas"><b>Örnek:</b> document.getElementsByName kullanımı</font></p>
+<img src='images/ss11.png' alt='Örnek2' height='200'><br><br>
+
+<h2><font color='#F50057' size='6' face="Consolas">HTML Etiketlerini Düzenleme</font></h2>
+<ul>
+<li><font face="Consolas">etiket.innerHTML: Etiketin içini okuma ve değiştirme için kullanılır.</font></li>
+<li><font face="Consolas">etiket.attribute: Etiketin niteliğini değiştirmek için kullanılır.</font></li>
+<li><font face="Consolas">etiket.setAttribute(nitelik, değeri): Etiketin niteliğini değiştirmek için kullanılır.</font></li>
+<li><font face="Consolas">etiket.style.property:  Etiketin stilini değiştirmek için kullanılır.</font></li>
+<li><font face="Consolas">etiket.classList: etiketlerin class niteliği üzerinde silme,değiştirme, ekleme, class listesini öğrenme gibi işlemleri yapmak için kullanılır.</font></li>
+</ul>
+<p><font face="Consolas"><b>Örnek:</b> etiket.innerHTML kullanımı</font></p>
+<img src='images/ss12.png' alt='Örnek2' height='300'><br><br><br>
+<h2><font color='#F50057' size='6' face="Consolas">HTML Etiketi Ekleme ve Silme</font></h2>
+<ul>
+<li><font face="Consolas">document.createElement(element) :HTML etiketi oluşturma</font></li>
+<li><font face="Consolas">document.removeChild(element): HTML etiketi silme</font></li>
+<li><font face="Consolas">document.appendChild(element): HTML etiketi ekleme</font></li>
+<li><font face="Consolas">document.replaceChild(element): HTML etiketini değiştirme</font></li>
+</ul>
+
+<p><font face="Consolas"><b>Örnek:</b>select içine yeni bir option ekleme </font></p>
+<ul>
+<li><font face="Consolas">createElement ile nesneyi oluşturduk.</font></li>
+<li><font face="Consolas"> setAttribute ile value niteliğine yeni sayı girişi yapılır.</font></li>
+<li><font face="Consolas">innerHTML ile de oluşturulan etiket içine “Beşiktaş” değerini atıyoruz.</font></li>
+<li><font face="Consolas">appendChild ile select içine oluşturulan option değerini ekledik.</font></li>
+</ul>
+<img src='images/ss13.png' alt='Örnek2' height='200'><br><br>
+<h2><font color='#F50057' size='6' face="Consolas"></font></h2>
+<p><font face="Consolas">HTML etiketine olay eklemek için iki yöntem mevcut. </font></p>
+<p><font face="Consolas"> <b>1.Yöntem:</b> HTML etiketlerine addEventListener metotu ile olay eklemesi yapılabilir.</font></p>
+<p><font face="Consolas"><b>2.Yöntem:</b> HTML etiketine olay özelliği ile olay eklemesi yapılabilir. </font></p><br><br>
+
+<p><font face="Consolas"><b> Örnek:</b> Aşağıdaki örnekte id’si birinci olan etikete tıkladığında(onclick) belirtilen anonim fonksiyon çalışacak ve ekrana uyarı verecektir.</font></p>
+<img src='images/ss14.png' alt='Örnek2' height='200'><br><br>
+<br><br>
+<h2><font color='#F50057' size='6' face="Consolas">Tüm JavaScript DOM Olayları
+Window Olay Niteliği</font></h2>
+<img src='images/ss15.png' alt='Örnek2' height='250'><br><br>
+<br><br>
+
+<h2><font color='#F50057' size='6' face="Consolas">Form Olayları</font></h2>
+<img src='images/ss16.png' alt='Örnek2' height='300'><br><br>
+
+
+<h2><font color='#F50057' size='6' face="Consolas">Klavye Olayları</font></h2>
+<img src='images/ss17.png' alt='Örnek2' height='200'><br><br>
+
+
+<h2><font color='#F50057' size='6' face="Consolas">Fare Olayları</font></h2>
+<img src='images/ss18.png' alt='Örnek2' height='300'><br><br>
+
+<h2><font color='#F50057' size='6' face="Consolas">Sürükleme(Drag) Olayları</font></h2>
+<img src='images/ss19.png' alt='Örnek2' height='300'><br><br>
+
+<h2><font color='#F50057' size='6' face="Consolas">Media Olayları</font></h2>
+<img src='images/ss21.png' alt='Örnek2' height='400'><br><br>
+
+
+<h2><font color='#F50057' size='6' face="Consolas">Misc
+</font></h2>
+<img src='images/ss22.png' alt='Örnek2' height='100'> <br><br><br><br>
+
+<h2><font color='#F50057' size='6' face="Consolas">Pano Olayları</font></h2>
+<img src='images/ss20.png' alt='Örnek2' height='200'> <br><br>
+
+
+</header>
+</body>
+</html>
+

@@ -1,0 +1,161 @@
+
+<html>
+<head>
+  <title>Kullanıcı Formu</title>
+<style type="text/css">
+#tablo tr td {
+	font-family: "Courier New", Courier, monospace;
+}
+</style>
+</head>
+<body>
+    <form>
+        <table id="tablo">
+          <tr>
+            <td width="86">Ad<p></p></td>
+            <td width="140">
+                <input type="text" id="isim" onKeyUp="validate();" >
+                <span class="hata"></span></td>
+          </tr>
+          <tr>
+            <td>Soyad:</td>
+            <td>
+                <input type="text" id="soyisim" onKeyUp="validate();" >
+                <span class="hata"></span></td>
+          </tr>
+          <tr>
+            <td>TC</td>
+            <td>
+                <input type="text" id="tc" onKeyUp="validate();" maxlength="11" >
+                <span class="hata"></span></td>
+          </tr>
+              <td>Telefon</td>
+            <td>
+                <input type="text" id="tlf" onKeyUp="validate();" maxlength="11" >
+                <span class="hata"></span></td>
+          </tr>
+          <tr>
+            <td>Email</td>
+            <td>
+                <input type="text" id="eposta" onKeyUp="validate();" >
+                <span class="hata"></span></td>
+          </tr>
+          <tr>
+            <td>Şifre</td>
+            <td>
+                <input type="password" id="sifre" onKeyUp="validate();" >
+                <span class="hata"></span></td>
+          </tr>
+          <tr>
+            <td>Şifre (Tekrar):</td>
+            <td>
+                <input type="password" id="sifre2" onKeyUp="validate();" >
+                <span class="hata"></span></td>
+          </tr>
+          <tr>
+            <td>
+                <input type="button" id="onay" value="Gönder" onClick="validate();">
+            </td>
+          </tr>
+        </table>
+    </form>  
+  <script type="text/javascript">
+      
+    function validate()
+    {
+      var inputlar = new Array();
+      inputlar[0] = document.getElementById('isim');
+      inputlar[1] = document.getElementById('soyisim');
+	  inputlar[2] = document.getElementById("tc");
+	  inputlar[3] = document.getElementById('tlf');
+      inputlar[4] = document.getElementById('eposta');
+      inputlar[5] = document.getElementById('sifre');
+      inputlar[6] = document.getElementById('sifre2');
+        
+      var hatalar = new Array();
+      hatalar[0] = "Adınızı girin";
+      hatalar[1] = "Soyadınızı girin";
+	  hatalar[2] = "Tc kimlik no girin";
+	  hatalar[3] = "Telefon no girin";
+      hatalar[4] = "Eposta adresinizi kontrol edin";
+      hatalar[5] = "Şifrenizi girin";
+      hatalar[6] = "Şifreler aynı olmalı";
+      
+	  
+	  for (i in inputlar)
+      {
+        
+        var hataMesaj = hatalar[i];
+          
+ 
+        var span= document.querySelector("#"+inputlar[i].id+"+span");
+        
+          
+        if(inputlar[i].value == "")
+        {
+         span.innerHTML=hataMesaj;
+        }
+        else if(inputlar[i].id=="eposta")
+        {
+            var atpos=inputlar[i].value.indexOf("@");
+            var nokpos=inputlar[i].value.lastIndexOf(".");
+            if (atpos<1 || nokpos<atpos+2 || nokpos+2>=inputlar[i].value.length)
+            {
+                span.innerHTML=hataMesaj;
+            }
+            else
+            {
+ 
+                span.innerHTML="Tamamlandı!";
+                span.style="color:green"; 
+            }
+        }
+        else if(inputlar[i].id=="sifre")
+        {
+            var sifre = document.getElementById('sifre').value;
+            var sifre2 = document.getElementById('sifre2').value;
+            
+            if(sifre!=sifre2)
+            {
+                span.innerHTML=hataMesaj;
+            }
+            else
+            {
+                span.innerHTML="Tamamlandı!";
+                span.style="color:green"; 
+            }
+        }
+        else
+        {
+            span.innerHTML="Tamamlandı!";
+            span.style="color:green";
+        }
+          
+        var onayBtn = document.getElementById('onay');
+        onayBtn.disabled="disabled";
+          onayBtn.style="background:gray;color:black";
+        
+        
+        var spanlar=document.querySelectorAll("span.hata");
+ 
+        var onayliSayi=0;
+        for(var i=0;i<spanlar.length;i++)
+        {
+            if(spanlar[i].innerHTML=="Tamamlandı!")
+            {
+              onayliSayi++;  
+            }
+        }
+          
+     
+        if(onayliSayi==spanlar.length)
+        {
+            onayBtn.disabled = false;
+            onayBtn.style="background:green;color:white";
+        }
+     }
+    }
+   </script>
+</body>
+</html>
+ 

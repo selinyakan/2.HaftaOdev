@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+
+	<style type="text/css">
+		.pembe {
+			color:#F8BBD0;
+			background-color:#F50057;
+		}
+	</style>
+	<script type="text/javascript">
+		function yeni() {
+			var metin = document.getElementById("textarea").value;
+			var yeniElement = document.createElement("p");
+			var icerik = document.createTextNode(metin);
+			yeniElement.appendChild(icerik);
+			var anaKısım = document.getElementById("anaKısım");
+			anaKısım.appendChild(yeniElement);
+		}
+
+		function sil() {
+			var elementler = document.getElementsByTagName("p");
+
+
+			if (elementler.length !=0) {
+			
+			var element = elementler[elementler.length-1];
+
+			var anne = element.parentNode;
+
+			anne.removeChild(element);
+
+			}			
+		}
+
+		function degistir() {
+
+			var elementler =document.getElementsByTagName("h2");
+
+			var i =	0;
+			for ( ;i  < elementler.length; i++) {
+					var ozellik = document.createAttribute("class");
+					ozellik.value="pembe";
+					elementler[i].setAttributeNode(ozellik);
+				}	
+				var hrefozelligi =document.createAttribute("href");
+				hrefozelligi.value="https://www.google.com";
+				document.getElementById("aetiketi").setAttributeNode(hrefozelligi);
+
+
+		}
+		
+	</script>
+	<title>Dinamik</title>
+</head>
+<body>
+	<div id="anaKısım" style="background-color:#FFCDD2">
+		<h2>Birinci Bölüm</h2>
+		<p>Bu bölümde dinamik olarak element eklemeyi göreceğiz.</p>
+		<h2>İkinci Bölüm</h2>
+		<p>Bu bölümde ise dinamik olarak element silmeyi göreceğiz.</p>
+		<a id = "aetiketi">Buraya Tıklayın</a>
+	</div>
+	<textarea id="textarea" rows="10" cols="50"></textarea>
+	<button onclick="yeni()">Ekle</button>
+	<button onclick="sil()">Sil</button>
+	<button onclick="degistir()">Değiştir</button>
+
+</body>
+</html>

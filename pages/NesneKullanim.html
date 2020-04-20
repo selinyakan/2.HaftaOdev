@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8>
+<link rel="stylesheet" type="text/css" href=odev.css">
+<title>Nesne Kullanımı</title>
+
+</head>
+<body>
+<header>
+
+<div style="margin-right:25%;padding:1px 16px; height:1000px;">
+
+
+<h1><font color='#C2185B' face="Consolas">JavaScript Object(Nesne) Kullanımı</font></h1>
+<p><b><font face="Consolas">5 adet veri tip, 3 adet Object tipi bulunan javaScript dilinde veri tiplerini Number, String, Boolean, Undefined, ve Null (bu da bir object’dir). Object tipini ise fonksiyon, dizi, nesne (object)  gibi referanslar oluşturmaktadır.Öncelikle Object oluşturma hangi yöntemlerle yapılır buna bakalım. </font></b></p>
+<p><b><font face="Consolas">JavaScript’te nesne oluşturmak için { } süslü parantezler kullanılır.</font></b></p>
+<p><b><font face="Consolas">var arac={ };</font></b></p>
+<p><b><font face="Consolas">var ogrenci={ };</font></b></p>
+<p><b><font face="Consolas"></b>Yukarıdaki şekilde bir tanımlama yapıldığında içinde hiçbir şey bulunmayan arac ve ogrenci nesneleri oluşturulmuş olur.</font></p>
+<p><b><font face="Consolas">Şimdi de oluşturulan nesnelere özellik atamasının nasıl yapılacağına bakalım.</font></b></p>
+<img src='images/ss1.png' alt='Örnek' height='150'>
+<p><b><font face="Consolas">Yukarıdaki tanımlamaya baktığımızda;</font></b></p>
+<p><font face="Consolas"><b>Özellik: değer</b>şeklinde bir atama yapıldığını ve birden fazla özellik eklendiğinde “,” virgül ile ayrıldığını görüyoruz.Şimdi aşağıdaki örneği inceleyelim. Örneğimizde  arac isimli Object (nesne) tanımlaması ve bu nesneye ait özellik tanımlaması yapılarak bu özelliklerin sayfada yazdırılması sağlanmakta.</font></p>
+<img src='images/ss2.png' alt='Örnek2' height='500'>
+<p><b><font face="Consolas">Sayfamızı çalıştırdığımızda aşağıdaki görüntü oluşacaktır. </font></b></p>
+
+<p><b><font face="Consolas">Nesne içindeki özelliklerden biri metot içinde kullanılacaksa bu özellik this anahtar sözcüğü ile kullanılmalıdır. (this.saatUcreti) </font></b></p>
+
+<h2><font color='#F50057' size='6' face="Consolas">JavaScript Object Kullanımı</font></h2>
+<img src='images/ss3.png' alt='Örnek2' height='200'>
+<p><b><font face="Consolas">Şimdi de nesnemize metot tanımlaması yapalım. Metot tanımlamasını yukarıdaki örnek üzerinde gerçekleştireceğiz. Nesnemize ucretHesapla isminde bir metot tanımlayacağız. Bu fonksiyon dışarıdan bir parametre alarak çalışacaktır. Dışarıdan gönderilen saat bilgisini saatUcreti ile çarparak ödenecek tutarın hesaplanması görevini üstlenecektir. </font></b></p>
+
+<img src='images/ss4.png' alt='Örnek2' height='600'>
+<p><b><font face="Consolas">Ekran Çıktısı: </font></b></p>
+<p><b><font face="Consolas">Araç Detayları</font></b></p>
+<img src='images/ss5.png' alt='Örnek2' height='200'>
+<p><b><font face="Consolas">Şimdi basit bir örnek daha oluşturalım. Bu örneğimizde ogrenci isimli bir object’ e ait özellik ve metot tanımlaması yapacağız. ad ve soyad özelliklerinin yazdırılmasını sağlayacağız. Örneğe ait <script> </script> kodları;</font></b></p>
+<img src='images/ss6.png' alt='Örnek2' height='200'>
+<p><b><font face="Consolas"> Başka bir JavaScript nesnesi oluşturma yöntemi de constructor pattern(yapıcı desen) olarak tanımlamak mümkündür. Fonksiyon tanımlama yöntemi ile sınıf oluşturup,  oluşturulan sınıf new anahtarı ile nesne olarak türetilir.</font></b></p>
+<img src='images/ss7.png' alt='Örnek2' height='400'>
+<img src='images/ss8.png' alt='Örnek2' height='219'>
+
+</header>
+</body>
+</html>
